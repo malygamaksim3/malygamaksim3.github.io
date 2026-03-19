@@ -1,0 +1,231 @@
+/* ===== 1. СКИДАННЯ СТИЛІВ ===== */
+/* * — «зоряний» селектор: застосовується до ВСІХ елементів */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* розмір елемента включає padding і border */
+}
+
+/* ===== 2. CSS-ЗМІННІ (кольори та шрифти) ===== */
+:root {
+  /* Кольори */
+  --dark: #2c3e50;       /* темно-синій: навбар, підвал */
+  --accent: #3498db;     /* синій акцент: посилання, кнопки */
+  --accent-hover: #2980b9;
+  --light: #ecf0f1;      /* світло-сірий: фон деяких секцій */
+  --text: #333333;       /* майже чорний: основний текст */
+  --white: #ffffff;
+  --card-bg: #f8f9fa;
+
+  /* Шрифти */
+  --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Розміри */
+  --nav-height: 70px;    /* висота навбару */
+}
+
+/* Базові стилі для всього сайту */
+body {
+  font-family: var(--font);
+  color: var(--text);
+  line-height: 1.6;
+  padding-top: var(--nav-height); /* щоб контент не ховався під навбаром */
+}
+
+/* Контейнер для обмеження ширини вмісту */
+.container {
+  max-width: 1200px;   /* максимальна ширина */
+  margin: 0 auto;      /* центрування: 0 зверху/знизу, auto зліва/справа */
+  padding: 0 20px;     /* 20px відступ зліва і справа */
+}
+
+/* ===== 3. НАВІГАЦІЙНА ПАНЕЛЬ ===== */
+.navbar {
+  background-color: var(--dark); /* темний фон */
+  position: fixed;               /* «прилипає» до верху при прокрутці */
+  top: 0;                        /* відстань від верху сторінки = 0 */
+  left: 0;                       /* від лівого краю = 0 */
+  width: 100%;                   /* на всю ширину вікна */
+  height: var(--nav-height);     /* висота = 70px */
+  z-index: 1000;                 /* поверх усього іншого */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .container {
+  display: flex;                  /* увімкнути Flexbox */
+  justify-content: space-between; /* лого ліворуч, меню праворуч */
+  align-items: center;            /* по вертикалі — по центру */
+  height: 100%;                   /* контейнер на всю висоту навбару */
+}
+
+.logo {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;       /* елементи в рядок */
+  list-style: none;    /* прибираємо стандартні «кружечки» */
+  gap: 30px;           /* відстань між пунктами меню */
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;   /* прибираємо підкреслення */
+  font-size: 1rem;
+  transition: color 0.3s;  /* плавна зміна кольору за 0.3 секунди */
+}
+
+.nav-links a:hover {
+  color: var(--accent); /* при наведенні — синій колір */
+}
+
+/* Кнопка-«гамбургер» — поки приховуємо */
+.burger {
+  display: none;           /* прихована на десктопі */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;         /* курсор-рука при наведенні */
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--white);
+  transition: all 0.3s;
+}
+
+/* ===== 4. СЕКЦІЯ: ГОЛОВНА (HERO) ===== */
+.hero {
+  background: linear-gradient(135deg, var(--dark) 0%, #34495e 100%);
+  color: var(--white);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero .accent {
+  color: var(--accent);
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+/* Кнопка */
+.btn {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--white);
+  padding: 14px 36px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--accent-hover);
+}
+
+/* ===== 5. СЕКЦІЯ: ПРО МЕНЕ ===== */
+.about {
+  padding: 80px 0;
+  background-color: var(--white);
+}
+
+.about h2,
+.skills h2,
+.projects h2,
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-align: center;
+  color: var(--dark);
+  position: relative;
+}
+
+.about h2::after,
+.skills h2::after,
+.projects h2::after,
+.contact h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.about-content {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text p {
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+}
+
+.about-info {
+  flex: 0 0 300px;
+  background-color: var(--light);
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.about-info ul {
+  list-style: none;
+}
+
+.about-info li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+
+.about-info li:last-child {
+  border-bottom: none;
+}
+/* ===== 9. ПІДВАЛ ===== */
+.footer {
+  background-color: var(--dark);
+  color: #aaa;
+  text-align: center;
+  padding: 24px 0;
+  font-size: 0.9rem;
+}
+
+/* ===== 10. АДАПТИВНІСТЬ: екрани шириною 768px і менше ===== */
+/* Медіа-запит ЗАВЖДИ в кінці CSS-файлу — щоб перекрити попередні стилі */
+@media (max-width: 768px) {
+
+  /* Ховаємо горизонтальне меню */
+  .nav-links {
+    display: none;
+  }
+
+  /* Показуємо кнопку-«гамбургер» */
+  .burger {
+    display: flex;
+  }
