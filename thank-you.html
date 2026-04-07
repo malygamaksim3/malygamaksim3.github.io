@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дякую за повідомлення! — Малига Максим</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Додаткові стилі для thank-you сторінки */
+    .thankyou-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .thankyou-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 3rem 2.5rem;
+      max-width: 520px;
+      width: 100%;
+      animation: fadeInUp 0.7s ease both;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .thankyou-icon {
+      font-size: 4rem;
+      margin-bottom: 1.2rem;
+      display: block;
+      animation: pop 0.5s ease 0.4s both;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0.5); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+
+    .thankyou-card h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .thankyou-card p {
+      color: #aaa;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .btn-back {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      background: var(--accent, #7b68ee);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.25s, transform 0.2s;
+    }
+
+    .btn-back:hover {
+      background: var(--accent-hover, #5a4fcf);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Навігаційна панель -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">Малига Максим</div>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Головна</a></li>
+        <li><a href="index.html#about">Про мене</a></li>
+        <li><a href="index.html#skills">Навички</a></li>
+        <li><a href="index.html#projects">Проєкти</a></li>
+        <li><a href="index.html#contact">Контакти</a></li>
+      </ul>
+      <div class="burger" id="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Секція подяки -->
+  <section class="thankyou-section">
+    <div class="thankyou-card">
+      <span class="thankyou-icon">✉️</span>
+      <h1>Дякую за повідомлення!</h1>
+      <p>
+        Ваше повідомлення успішно надіслано.<br>
+        Я обов'язково зв'яжуся з вами найближчим часом.
+      </p>
+      <a href="index.html" class="btn-back">← Повернутись на головну</a>
+    </div>
+  </section>
+
+  <!-- Підвал -->
+  <footer class="footer">
+    <div class="container">
+      <p>2026 Малига Максим | Група 3КН | Спеціальність 122 «Комп'ютерні науки»</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
