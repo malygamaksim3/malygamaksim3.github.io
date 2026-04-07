@@ -1,0 +1,14 @@
+# netlify.toml -файл конфігурації Netlify
+[build]
+publish = "."
+[build.environment]
+NODE_VERSION = "20"
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+[[headers]]
+for = "/*"
+  [headers.values]
+  X-Frame-Options = "DENY"
+  X-Content-Type-Options = "nosniff"
